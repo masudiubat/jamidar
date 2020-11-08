@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
                 <div class="about-image">
-                    <img src="{{ asset('assets/images/about.jpg')}}" alt="" />
+                    <img src="{{ asset('assets/frontend/images/about.jpg')}}" alt="" />
                 </div>
             </div>
         </div>
@@ -171,7 +171,7 @@
                     <div class="agent-list text-center">
                         <div class="agent-image">
                             <figure>
-                                <img src="{{ asset('assets/images/agent/agent-1-v1.jpg')}}" alt="" />
+                                <img src="{{ asset('assets/frontend/images/agent/agent-1-v1.jpg')}}" alt="" />
                                 <span class="image-cap"><i class="fa fa-plus"></i></span>
                             </figure>
                         </div>
@@ -191,7 +191,7 @@
                     <div class="agent-list text-center">
                         <div class="agent-image">
                             <figure>
-                                <img src="{{ asset('assets/images/agent/agent-2-v1.jpg')}}" alt="" />
+                                <img src="{{ asset('assets/frontend/images/agent/agent-2-v1.jpg')}}" alt="" />
                                 <span class="image-cap"><i class="fa fa-plus"></i></span>
                             </figure>
                         </div>
@@ -211,7 +211,7 @@
                     <div class="agent-list text-center">
                         <div class="agent-image">
                             <figure>
-                                <img src="{{ asset('assets/images/agent/agent-3-v1.jpg')}}" alt="" />
+                                <img src="{{ asset('assets/frontend/images/agent/agent-3-v1.jpg')}}" alt="" />
                                 <span class="image-cap"><i class="fa fa-plus"></i></span>
                             </figure>
                         </div>
@@ -231,7 +231,7 @@
                     <div class="agent-list text-center">
                         <div class="agent-image">
                             <figure>
-                                <img src="{{ asset('assets/images/agent/agent-4-v1.jpg')}}" alt="" />
+                                <img src="{{ asset('assets/frontend/images/agent/agent-4-v1.jpg')}}" alt="" />
                                 <span class="image-cap"><i class="fa fa-plus"></i></span>
                             </figure>
                         </div>
@@ -251,7 +251,7 @@
                     <div class="agent-list text-center">
                         <div class="agent-image">
                             <figure>
-                                <img src="{{ asset('assets/images/agent/agent-3-v1.jpg')}}" alt="" />
+                                <img src="{{ asset('assets/frontend/images/agent/agent-3-v1.jpg')}}" alt="" />
                                 <span class="image-cap"><i class="fa fa-plus"></i></span>
                             </figure>
                         </div>
@@ -271,7 +271,7 @@
                     <div class="agent-list text-center">
                         <div class="agent-image">
                             <figure>
-                                <img src="{{ asset('assets/images/agent/agent-1-v1.jpg')}}" alt="" />
+                                <img src="{{ asset('assets/frontend/images/agent/agent-1-v1.jpg')}}" alt="" />
                                 <span class="image-cap"><i class="fa fa-plus"></i></span>
                             </figure>
                         </div>
@@ -318,17 +318,17 @@
             <div class="col-md-12">
                 <div class="client-img text-center">
                     <a data-slide-index="0" href="#">
-                        <div class="over-img"><img src="{{ asset('assets/images/client/client-1.jpg')}}" alt="" /></div>
+                        <div class="over-img"><img src="{{ asset('assets/frontend/images/client/client-1.jpg')}}" alt="" /></div>
                         <h4>Hemai Smith</h4>
                         <p>Happy seller</p>
                     </a>
                     <a data-slide-index="1" href="#">
-                        <div class="over-img"><img src="{{ asset('assets/images/client/client-2.jpg')}}" alt="" /></div>
+                        <div class="over-img"><img src="{{ asset('assets/frontend/images/client/client-2.jpg')}}" alt="" /></div>
                         <h4>Hemai Smith</h4>
                         <p>Happy seller</p>
                     </a>
                     <a data-slide-index="2" href="#">
-                        <div class="over-img"><img src="{{ asset('assets/images/client/client-3.jpg')}}" alt="" /></div>
+                        <div class="over-img"><img src="{{ asset('assets/frontend/images/client/client-3.jpg')}}" alt="" /></div>
                         <h4>Hemai Smith</h4>
                         <p>Happy seller</p>
                     </a>

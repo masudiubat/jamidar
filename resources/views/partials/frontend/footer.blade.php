@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="footer-about">
-                    <img src="{{ asset('assets/images/logo/logo.jpg')}}" alt="" />
+                    <img src="{{ asset('assets/frontend/images/logo/logo.jpg')}}" alt="" />
                     <p>Lorem ipsum dolor sit amet duis risu consectetur adipiscing elit Phasellus
                         ac volutpat dolor tortor molestie max.
                     </p>
@@ -20,7 +20,7 @@
                 <div class="footer-properties footer-content-area">
                     <h4>Recent properties</h4>
                     <div class="prop-list">
-                        <div class="prop-image floatleft"><img src="{{ asset('assets/images/footer/footer-1-v1.jpg')}}" alt="" /></div>
+                        <div class="prop-image floatleft"><img src="{{ asset('assets/frontend/images/footer/footer-1-v1.jpg')}}" alt="" /></div>
                         <div class="prop-details text-left">
                             <h5><a href="#">2186 Rinehart Road</a></h5>
                             <p>Doral, FL 33178</p>
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="prop-list">
-                        <div class="prop-image floatleft"><img src="{{ asset('assets/images/footer/footer-2-v1.jpg')}}" alt="" /></div>
+                        <div class="prop-image floatleft"><img src="{{ asset('assets/frontend/images/footer/footer-2-v1.jpg')}}" alt="" /></div>
                         <div class="prop-details text-left">
                             <h5><a href="#">2186 Rinehart Road</a></h5>
                             <p>Doral, FL 33178</p>

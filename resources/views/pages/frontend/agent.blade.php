@@ -29,7 +29,7 @@
                 <div class="agent-list text-center">
                     <div class="agent-image">
                         <figure>
-                            <img src="{{ asset('assets/images/agent/agent-1-v1.jpg')}}" alt="" />
+                            <img src="{{ asset('assets/frontend/images/agent/agent-1-v1.jpg')}}" alt="" />
                             <span class="image-cap"><i class="fa fa-plus"></i></span>
                         </figure>
                     </div>
@@ -49,7 +49,7 @@
                 <div class="agent-list text-center">
                     <div class="agent-image">
                         <figure>
-                            <img src="{{ asset('assets/images/agent/agent-2-v1.jpg')}}" alt="" />
+                            <img src="{{ asset('assets/frontend/images/agent/agent-2-v1.jpg')}}" alt="" />
                             <span class="image-cap"><i class="fa fa-plus"></i></span>
                         </figure>
                     </div>
@@ -69,7 +69,7 @@
                 <div class="agent-list text-center">
                     <div class="agent-image">
                         <figure>
-                            <img src="{{ asset('assets/images/agent/agent-3-v1.jpg')}}" alt="" />
+                            <img src="{{ asset('assets/frontend/images/agent/agent-3-v1.jpg')}}" alt="" />
                             <span class="image-cap"><i class="fa fa-plus"></i></span>
                         </figure>
                     </div>
@@ -89,7 +89,7 @@
                 <div class="agent-list text-center">
                     <div class="agent-image">
                         <figure>
-                            <img src="{{ asset('assets/images/agent/agent-1-v1.jpg')}}" alt="" />
+                            <img src="{{ asset('assets/frontend/images/agent/agent-1-v1.jpg')}}" alt="" />
                             <span class="image-cap"><i class="fa fa-plus"></i></span>
                         </figure>
                     </div>
@@ -109,7 +109,7 @@
                 <div class="agent-list text-center">
                     <div class="agent-image">
                         <figure>
-                            <img src="{{ asset('assets/images/agent/agent-2-v1.jpg')}}" alt="" />
+                            <img src="{{ asset('assets/frontend/images/agent/agent-2-v1.jpg')}}" alt="" />
                             <span class="image-cap"><i class="fa fa-plus"></i></span>
                         </figure>
                     </div>
@@ -129,7 +129,7 @@
                 <div class="agent-list text-center">
                     <div class="agent-image">
                         <figure>
-                            <img src="{{ asset('assets/images/agent/agent-3-v1.jpg')}}" alt="" />
+                            <img src="{{ asset('assets/frontend/images/agent/agent-3-v1.jpg')}}" alt="" />
                             <span class="image-cap"><i class="fa fa-plus"></i></span>
                         </figure>
                     </div>
@@ -149,7 +149,7 @@
                 <div class="agent-list text-center">
                     <div class="agent-image">
                         <figure>
-                            <img src="{{ asset('assets/images/agent/agent-1-v1.jpg')}}" alt="" />
+                            <img src="{{ asset('assets/frontend/images/agent/agent-1-v1.jpg')}}" alt="" />
                             <span class="image-cap"><i class="fa fa-plus"></i></span>
                         </figure>
                     </div>
@@ -169,7 +169,7 @@
                 <div class="agent-list text-center">
                     <div class="agent-image">
                         <figure>
-                            <img src="{{ asset('assets/images/agent/agent-2-v1.jpg')}}" alt="" />
+                            <img src="{{ asset('assets/frontend/images/agent/agent-2-v1.jpg')}}" alt="" />
                             <span class="image-cap"><i class="fa fa-plus"></i></span>
                         </figure>
                     </div>

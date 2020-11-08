@@ -12,31 +12,31 @@
 
 <!-- All CSS here -->
 <!-- bootstrap v3.3.6 CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css')}}">
 <!-- animate CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/animate.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css')}}">
 <!-- jquery-ui.min CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/jquery-ui.min.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/jquery-ui.min.css')}}">
 <!-- bootstrap select CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-select.min.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap-select.min.css')}}">
 <!-- magnific popup CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/magnific-popup.css')}}">
 <!-- owl.carousel CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.css')}}">
 <!-- bxslider CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/jquery.bxslider.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/jquery.bxslider.css')}}">
 <!-- slick CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/slick.css')}}">
-<link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/slick.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/slick-theme.css')}}">
 <!-- font-awesome CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/font-awesome.min.css')}}">
 <!-- meanmenu css -->
-<link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/meanmenu.min.css')}}">
 <!-- style CSS -->
-<link rel="stylesheet" href="{{ asset('assets/style.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/style.css')}}">
 <!-- responsive CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css')}}">
 <!-- modernizr CSS -->
-<script src="{{ asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+<script src="{{ asset('assets/frontend/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 
 @stack('css')

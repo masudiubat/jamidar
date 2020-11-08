@@ -95,7 +95,7 @@
                                         </span>
 
                                         <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/images/properties/properties-list-1.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-1.jpg')}}" alt="" />
                                             <div class="content-list text-center">
                                                 <h3>Villa In Hialeah, Dade County</h3>
                                                 <p>$7,500 Per Month - Single Family Home</p>
@@ -114,7 +114,7 @@
                                         </span>
 
                                         <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/images/properties/properties-list-2.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-2.jpg')}}" alt="" />
                                             <div class="content-list text-center">
                                                 <h3>Villa In Hialeah, Dade County</h3>
                                                 <p>$7,500 Per Month - Single Family Home</p>
@@ -133,7 +133,7 @@
                                         </span>
 
                                         <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/images/properties/properties-list-3.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-3.jpg')}}" alt="" />
                                             <div class="content-list text-center">
                                                 <h3>Villa In Hialeah, Dade County</h3>
                                                 <p>$7,500 Per Month - Single Family Home</p>
@@ -152,7 +152,7 @@
                                         </span>
 
                                         <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/images/properties/properties-list-4.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-4.jpg')}}" alt="" />
                                             <div class="content-list text-center">
                                                 <h3>Villa In Hialeah, Dade County</h3>
                                                 <p>$7,500 Per Month - Single Family Home</p>
@@ -171,7 +171,7 @@
                                         </span>
 
                                         <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/images/properties/properties-list-5.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-5.jpg')}}" alt="" />
                                             <div class="content-list text-center">
                                                 <h3>Villa In Hialeah, Dade County</h3>
                                                 <p>$7,500 Per Month - Single Family Home</p>
@@ -190,7 +190,7 @@
                                         </span>
 
                                         <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/images/properties/properties-list-6.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-6.jpg')}}" alt="" />
                                             <div class="content-list text-center">
                                                 <h3>Villa In Hialeah, Dade County</h3>
                                                 <p>$7,500 Per Month - Single Family Home</p>
@@ -209,7 +209,7 @@
                                         </span>
 
                                         <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/images/properties/properties-list-1.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-1.jpg')}}" alt="" />
                                             <div class="content-list text-center">
                                                 <h3>Villa In Hialeah, Dade County</h3>
                                                 <p>$7,500 Per Month - Single Family Home</p>
@@ -228,7 +228,7 @@
                                         </span>
 
                                         <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/images/properties/properties-list-7.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-7.jpg')}}" alt="" />
                                             <div class="content-list text-center">
                                                 <h3>Villa In Hialeah, Dade County</h3>
                                                 <p>$7,500 Per Month - Single Family Home</p>
@@ -247,7 +247,7 @@
                                         </span>
 
                                         <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/images/properties/properties-list-8.jpg')}}" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-8.jpg')}}" alt="" />
                                             <div class="content-list text-center">
                                                 <h3>Villa In Hialeah, Dade County</h3>
                                                 <p>$7,500 Per Month - Single Family Home</p>

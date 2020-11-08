@@ -30,20 +30,20 @@
                     <h4>Villa On Washington Ave</h4>
                     <p>Add to favorites 3 Rooms 5 Bedrooms Villas Sales</p>
                     <div class="bg-photo">
-                        <img src="{{    asset('assets/images/properties/properties-details-2.1.jpg')}}" alt="">
-                        <img src="{{	asset('assets/images/properties/properties-details-2.2.jpg')}}" alt="">
-                        <img src="{{	asset('assets/images/properties/properties-details-2.3.jpg')}}" alt="">
-                        <img src="{{	asset('assets/images/properties/properties-details-2.4.jpg')}}" alt="">
-                        <img src="{{    asset('assets/images/properties/properties-details-2.1.jpg')}}" alt="">
-                        <img src="{{	asset('assets/images/properties/properties-details-2.2.jpg')}}" alt="">
+                        <img src="{{    asset('assets/frontend/images/properties/properties-details-2.1.jpg')}}" alt="">
+                        <img src="{{	asset('assets/frontend/images/properties/properties-details-2.2.jpg')}}" alt="">
+                        <img src="{{	asset('assets/frontend/images/properties/properties-details-2.3.jpg')}}" alt="">
+                        <img src="{{	asset('assets/frontend/images/properties/properties-details-2.4.jpg')}}" alt="">
+                        <img src="{{    asset('assets/frontend/images/properties/properties-details-2.1.jpg')}}" alt="">
+                        <img src="{{	asset('assets/frontend/images/properties/properties-details-2.2.jpg')}}" alt="">
                     </div>
                     <div class="sm-photo">
-                        <a href="#" data-slide-index="0"><img src="{{ asset('assets/images/properties/properties-details-2.1.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="1"><img src="{{ asset('assets/images/properties/properties-details-2.2.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="2"><img src="{{ asset('assets/images/properties/properties-details-2.3.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="3"><img src="{{ asset('assets/images/properties/properties-details-2.4.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="0"><img src="{{ asset('assets/images/properties/properties-details-2.1.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="1"><img src="{{ asset('assets/images/properties/properties-details-2.2.jpg')}}" alt=""></a>
+                        <a href="#" data-slide-index="0"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.1.jpg')}}" alt=""></a>
+                        <a href="#" data-slide-index="1"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.2.jpg')}}" alt=""></a>
+                        <a href="#" data-slide-index="2"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.3.jpg')}}" alt=""></a>
+                        <a href="#" data-slide-index="3"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.4.jpg')}}" alt=""></a>
+                        <a href="#" data-slide-index="0"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.1.jpg')}}" alt=""></a>
+                        <a href="#" data-slide-index="1"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.2.jpg')}}" alt=""></a>
                     </div>
                 </div>
                 <div class="single-descrip">
@@ -92,7 +92,7 @@
                 <div class="single-descrip">
                     <div class="property-map">
                         <h4>Property Map:</h4>
-                        <img src="{{ asset('assets/images/map.jpg')}}" alt="" />
+                        <img src="{{ asset('assets/frontend/images/map.jpg')}}" alt="" />
                     </div>
                 </div>
             </div>
