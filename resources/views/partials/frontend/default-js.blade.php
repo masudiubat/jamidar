@@ -25,6 +25,9 @@
 <script src="{{ asset('assets/frontend/js/plugins.js')}}"></script>
 <!-- main JS -->
 <script src="{{ asset('assets/frontend/js/main.js')}}"></script>
+<!-- toaster JS -->
+<script src="{{asset('assets/admin/js/toastr.min.js')}}"></script>
+{!! Toastr::message() !!}
 
 
 <script type="text/javascript">
@@ -79,7 +82,7 @@
             $localArea.empty();
             $localArea.append('<option value="#">Local Area</option>');
             for (var i = 0; i < data.localAreas.length; i++) {
-                $localArea.append('<option value=' + data.localAreas[i]["id"] + '>' + data.localAreas[i]["name_bn"] + '</option>');
+                $localArea.append('<option value=' + data.localAreas[i]["id"] + '>' + data.localAreas[i]["name_en"] + '</option>');
             }
             $localArea.selectpicker('refresh');
         });

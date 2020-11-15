@@ -15,7 +15,7 @@
                 <div class="banner-content">
                     <h3>Property List</h3>
                     <ul>
-                        <li><a href="home-1.html">Home</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
                         <li>></li>
                         <li><a href="#"><span>Property List</span></a></li>
                     </ul>
@@ -34,240 +34,116 @@
                     <!--Filter Area -->
                     <section class="filter-area filter-v1 section">
                         <div class="container">
-                            <div class="row filter heading">
-                                <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-                                    <h4>Find Your Property <i class="fa fa-search"></i></h4>
-                                </div>
-                            </div>
                             <div class="row filter box">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <ul>
-                                        <li>
-                                            <select class="selectpicker">
-                                                <option>Buy</option>
-                                                <option>Rent</option>
-                                            </select>
-                                        </li>
-                                        <li>
-                                            <select class="selectpicker">
-                                                <option>District</option>
-                                                <option>Dhaka</option>
-                                                <option>Khulna</option>
-                                                <option>Rajshai</option>
-                                                <option>Bagerhat</option>
-                                            </select>
-                                        </li>
-                                        <li>
-                                            <select class="selectpicker">
-                                                <option>Thana</option>
-                                                <option>Ketchup</option>
-                                                <option>Relish</option>
-                                            </select>
-                                        </li>
-                                        <li>
-                                            <select class="selectpicker">
-                                                <option>Area</option>
-                                                <option>Dhaka</option>
-                                                <option>Khulna</option>
-                                                <option>Rajshai</option>
-                                                <option>Bagerhat</option>
-                                            </select>
-                                        </li>
-                                        <li>
-                                            <div class="search-btn">
-                                                <a class="btn btn-b">Search</a>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <h5>Find Your Property <i class="fa fa-search"></i></h5>
+                                    <form action="{{route('search.property')}}" method="POST">
+                                        @csrf
+                                        <ul>
+                                            <li>
+                                                <select class="selectpicker buyer-choice" id="buyer-choice" name="buyer-choice" required="required">
+                                                    <option disabled selected>Your plan?</option>
+                                                    <option value="1" class="selected-land">Buy Land</option>
+                                                    <option value="2" class="selected-land">Rent Land</option>
+                                                    <option value="3" class="selected-flat">Buy Flat</option>
+                                                    <option value="4" class="selected-flat">Rent Flat</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                <select name="district" class="selectpicker district" id="district" required="required">
+                                                    <option>District</option>
+                                                    @foreach($districts as $district)
+                                                    <option value="{{ $district->id }}">{{ $district->name_en }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </li>
+                                            <li>
+                                                <select class="thana selectpicker" id="thana" name="thana" required="required">
+                                                    <option value="#">Select Thana</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                <select class="selectpicker local-area" id="local-area" name="region" required="required">
+                                                    <option>Local Area</option>
+                                                </select>
+                                            </li>
+
+                                            <li>
+                                                <select class="selectpicker land-area" id="land-area" name="land-area">
+                                                    <option value="">Land Area</option>
+                                                    <option value="1">2 to 4 katha</option>
+                                                    <option value="2">5 to 7 katha</option>
+                                                    <option value="3">8 to 10 katha</option>
+                                                    <option value="4">More then 10 katha</option>
+                                                </select>
+                                            </li>
+
+                                            <li>
+                                                <select class="selectpicker flat-area" id="flat-area" name="flat-area">
+                                                    <option value="">Flat Area</option>
+                                                    <option value="1">500 to 800 square feet</option>
+                                                    <option value="2">801 to 1100 square feet</option>
+                                                    <option value="3">1101 to 1400 square feet</option>
+                                                    <option value="4">1401 to 1700 square feet</option>
+                                                    <option value="5">1701 to 2000 square feet</option>
+                                                    <option value="6">More then 2000 square feet</option>
+                                                </select>
+                                            </li>
+
+                                            <li>
+                                                <div class="search-btn">
+                                                    <button type="submit" name="submit" class="btn btn-search">Search</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </form>
                                 </div>
                             </div>
-                            <div class="filter-box-shadow"></div>
                         </div>
                     </section>
                     <!--/Filter Area -->
                     <div class="row property-list-all">
+                        @if(!$properties->isEmpty())
+                        @foreach($properties as $property)
                         <div class="col-md-4 col-sm-12 list-property">
                             <div class="owl-wrapper-outer">
                                 <div class="feature-item">
                                     <figure>
                                         <span>
-                                            <strong>For Sale</strong>
+                                            <strong>{{ $property->offer->name_en }}</strong>
                                         </span>
 
-                                        <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-1.jpg')}}" alt="" />
+                                        <a href="@if(Auth::check()) {{route('property.show', $property->id)}} @else {{ route('login')}} @endif">
+                                            <img src="{{ asset('storage/images/cover/'.$property->cover_image) }}" alt="cover photo" />
                                             <div class="content-list text-center">
-                                                <h3>Villa In Hialeah, Dade County</h3>
-                                                <p>$7,500 Per Month - Single Family Home</p>
+                                                <p style="margin-bottom: 10px;">{{ $property->district->name_en }}, {{ $property->thana->name_en}}, {{ $property->region->name_en}}</p>
+                                                @if($property->offer->id == 1 || $property->offer->id == 2)
+                                                <p>
+                                                    Land Area: {{ $property->amount_of_land_en }} Katha <br />
+                                                    Price: {{ $property->minimum_price_en }} BDT per Katha
+                                                </p>
+                                                @else
+                                                <p>
+                                                    Flat Area: {{ $property->flat_space_en }} Square feet <br />
+                                                    Price: {{ $property->minimum_price_en }} BDT per Square feet
+                                                </p>
+                                                @endif
                                             </div>
                                         </a>
                                     </figure>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-12 list-property">
-                            <div class="owl-wrapper-outer">
-                                <div class="feature-item">
-                                    <figure>
-                                        <span>
-                                            <strong>To-Let</strong>
-                                        </span>
+                        @endforeach
 
-                                        <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-2.jpg')}}" alt="" />
-                                            <div class="content-list text-center">
-                                                <h3>Villa In Hialeah, Dade County</h3>
-                                                <p>$7,500 Per Month - Single Family Home</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 list-property">
-                            <div class="owl-wrapper-outer">
-                                <div class="feature-item">
-                                    <figure>
-                                        <span>
-                                            <strong>To-Let</strong>
-                                        </span>
-
-                                        <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-3.jpg')}}" alt="" />
-                                            <div class="content-list text-center">
-                                                <h3>Villa In Hialeah, Dade County</h3>
-                                                <p>$7,500 Per Month - Single Family Home</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 list-property">
-                            <div class="owl-wrapper-outer">
-                                <div class="feature-item">
-                                    <figure>
-                                        <span>
-                                            <strong>For Sale</strong>
-                                        </span>
-
-                                        <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-4.jpg')}}" alt="" />
-                                            <div class="content-list text-center">
-                                                <h3>Villa In Hialeah, Dade County</h3>
-                                                <p>$7,500 Per Month - Single Family Home</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 list-property">
-                            <div class="owl-wrapper-outer">
-                                <div class="feature-item">
-                                    <figure>
-                                        <span>
-                                            <strong>For Sale</strong>
-                                        </span>
-
-                                        <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-5.jpg')}}" alt="" />
-                                            <div class="content-list text-center">
-                                                <h3>Villa In Hialeah, Dade County</h3>
-                                                <p>$7,500 Per Month - Single Family Home</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 list-property">
-                            <div class="owl-wrapper-outer">
-                                <div class="feature-item">
-                                    <figure>
-                                        <span>
-                                            <strong>To-Let</strong>
-                                        </span>
-
-                                        <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-6.jpg')}}" alt="" />
-                                            <div class="content-list text-center">
-                                                <h3>Villa In Hialeah, Dade County</h3>
-                                                <p>$7,500 Per Month - Single Family Home</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 list-property">
-                            <div class="owl-wrapper-outer">
-                                <div class="feature-item">
-                                    <figure>
-                                        <span>
-                                            <strong>Dhaka</strong>
-                                        </span>
-
-                                        <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-1.jpg')}}" alt="" />
-                                            <div class="content-list text-center">
-                                                <h3>Villa In Hialeah, Dade County</h3>
-                                                <p>$7,500 Per Month - Single Family Home</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 list-property">
-                            <div class="owl-wrapper-outer">
-                                <div class="feature-item">
-                                    <figure>
-                                        <span>
-                                            <strong>Dhaka</strong>
-                                        </span>
-
-                                        <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-7.jpg')}}" alt="" />
-                                            <div class="content-list text-center">
-                                                <h3>Villa In Hialeah, Dade County</h3>
-                                                <p>$7,500 Per Month - Single Family Home</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-12 list-property">
-                            <div class="owl-wrapper-outer">
-                                <div class="feature-item">
-                                    <figure>
-                                        <span>
-                                            <strong>Dhaka</strong>
-                                        </span>
-
-                                        <a href="{{route('property.show', 1)}}">
-                                            <img src="{{ asset('assets/frontend/images/properties/properties-list-8.jpg')}}" alt="" />
-                                            <div class="content-list text-center">
-                                                <h3>Villa In Hialeah, Dade County</h3>
-                                                <p>$7,500 Per Month - Single Family Home</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-md-12 text-center">
                             <div class="pagin">
-                                <ul>
-                                    <li><span><i class="fa fa-angle-double-left"></i></span></li>
-                                    <li><span class="active">1</span></li>
-                                    <li><span>2</span></li>
-                                    <li><span>3</span></li>
-                                    <li><span><i class="fa fa-angle-double-right"></i></span></li>
-                                </ul>
+                                {!! $properties->links() !!}
                             </div>
                         </div>
+                        @else
+                        <h3>No property found. Please check near about this place.</h3>
+                        @endif
                     </div>
                 </div>
             </div>

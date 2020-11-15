@@ -13,7 +13,7 @@ class CreatePropertiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->index();
             $table->unsignedBigInteger('offer_id')->index();
@@ -41,7 +41,8 @@ class CreatePropertiesTable extends Migration
             $table->string('rent_from_month')->nullable();
             $table->text('description_en')->nullable();
             $table->text('description_bn')->nullable();
-
+            $table->string('cover_image')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

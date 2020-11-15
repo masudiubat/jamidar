@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Favourite;
 
 use App\Models\Property;
 use App\Models\Role;
@@ -71,5 +72,10 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function favourites()
+    {
+        return $this->hasMany(Favourite::class);
     }
 }

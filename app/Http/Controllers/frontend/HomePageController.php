@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\frontend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\District;
+use App\Models\Property;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomePageController extends Controller
 {
@@ -16,7 +17,13 @@ class HomePageController extends Controller
     public function index()
     {
         $districts = District::all();
-        return view('pages.frontend.home', ['districts' => $districts]);
+        $featuredImage = Property::select('id', 'cover_image')
+            ->where('status', 1)
+            ->orderBy('id', 'DESC')
+            ->take(6)
+            ->get();
+
+        return view('pages.frontend.home', ['districts' => $districts, 'featuredImage' => $featuredImage]);
     }
 
     /**

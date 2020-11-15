@@ -38,5 +38,7 @@
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css')}}">
 <!-- modernizr CSS -->
 <script src="{{ asset('assets/frontend/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+<!-- toaster CSS -->
+<link rel="stylesheet" href="{{asset('assets/admin/css/toastr.min.css')}}">
 
 @stack('css')

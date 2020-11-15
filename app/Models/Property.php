@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Image;
 use App\Models\Offer;
-use App\Models\District;
 use App\Models\Thana;
 use App\Models\Region;
+use App\Models\District;
+use App\Models\Favourite;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Property extends Model
 {
@@ -76,5 +78,15 @@ class Property extends Model
     public function region()
     {
         return $this->belongsTo(Region::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    public function favourites()
+    {
+        return $this->hasMany(Favourite::class);
     }
 }

@@ -14,61 +14,66 @@
         <div class="row filter box">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <h5>Find Your Property <i class="fa fa-search"></i></h5>
-                <ul>
-                    <li>
-                        <select class="selectpicker buyer-choice" id="buyer-choice">
-                            <option disabled selected>Your plan?</option>
-                            <option value="1" class="selected-land">Buy Land</option>
-                            <option value="2" class="selected-land">Rent Land</option>
-                            <option value="3" class="selected-flat">Buy Flat</option>
-                            <option value="4" class="selected-flat">Rent Flat</option>
-                        </select>
-                    </li>
-                    <li>
-                        <select name="district" class="selectpicker district" id="district">
-                            <option>District</option>
-                            @foreach($districts as $district)
-                            <option value="{{ $district->id }}">{{ $district->name_en }}</option>
-                            @endforeach
-                        </select>
-                    </li>
-                    <li>
-                        <select class="thana selectpicker" id="thana">
-                            <option value="#">Select Thana</option>
-                        </select>
-                    </li>
-                    <li>
-                        <select class="selectpicker local-area" id="local-area">
-                            <option>Local Area</option>
-                        </select>
-                    </li>
+                <form action="{{route('search.property')}}" method="POST">
+                    @csrf
+                    <ul>
+                        <li>
+                            <select class="selectpicker buyer-choice" id="buyer-choice" name="buyer-choice" required="required">
+                                <option disabled selected>Your plan?</option>
+                                <option value="1" class="selected-land">Buy Land</option>
+                                <option value="2" class="selected-land">Rent Land</option>
+                                <option value="3" class="selected-flat">Buy Flat</option>
+                                <option value="4" class="selected-flat">Rent Flat</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select name="district" class="selectpicker district" id="district" required="required">
+                                <option>District</option>
+                                @foreach($districts as $district)
+                                <option value="{{ $district->id }}">{{ $district->name_en }}</option>
+                                @endforeach
+                            </select>
+                        </li>
+                        <li>
+                            <select class="thana selectpicker" id="thana" name="thana" required="required">
+                                <option value="#">Select Thana</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="selectpicker local-area" id="local-area" name="region" required="required">
+                                <option>Local Area</option>
+                            </select>
+                        </li>
 
-                    <li>
-                        <select class="selectpicker land-area" id="land-area">
-                            <option>Land Area</option>
-                            <option>Dhaka</option>
-                            <option>Khulna</option>
-                            <option>Rajshai</option>
-                            <option>Bagerhat</option>
-                        </select>
-                    </li>
+                        <li>
+                            <select class="selectpicker land-area" id="land-area" name="land-area">
+                                <option value="">Land Area</option>
+                                <option value="1">2 to 4 katha</option>
+                                <option value="2">5 to 7 katha</option>
+                                <option value="3">8 to 10 katha</option>
+                                <option value="4">More then 10 katha</option>
+                            </select>
+                        </li>
 
-                    <li>
-                        <select class="selectpicker flat-area" id="flat-area">
-                            <option>Flat Area</option>
-                            <option>Dhaka</option>
-                            <option>Khulna</option>
-                            <option>Rajshai</option>
-                            <option>Bagerhat</option>
-                        </select>
-                    </li>
+                        <li>
+                            <select class="selectpicker flat-area" id="flat-area" name="flat-area">
+                                <option value="">Flat Area</option>
+                                <option value="1">500 to 800 square feet</option>
+                                <option value="2">801 to 1100 square feet</option>
+                                <option value="3">1101 to 1400 square feet</option>
+                                <option value="4">1401 to 1700 square feet</option>
+                                <option value="5">1701 to 2000 square feet</option>
+                                <option value="6">More then 2000 square feet</option>
+                            </select>
+                        </li>
 
-                    <li>
-                        <div class="search-btn">
-                            <a class="btn btn-b">Search</a>
-                        </div>
-                    </li>
-                </ul>
+                        <li>
+                            <div class="search-btn">
+                                <button type="submit" name="submit" class="btn btn-search">Search</button>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
             </div>
         </div>
     </div>
@@ -156,7 +161,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lectus turpis. Donec maximus odio nec odio commodo euismod. Quisque augue purus, porta vel facilisis ac, accumsan eu elit. Nulla ultricies odio sit amet arcu sodales, id ornare tortor tempor. Cras pellentesque lorem eget tincidunt eleifend. Phasellus a finibus metus. Aliquam eu nisl pellentesque
                         pellentesque libero quis, tempor nisi. Donec vitae mattis libero. Mauris est ipsum, vestibulum nec nibh quis, lacinia fringilla magna. Proin nec lacus ut odio euismod tincidunt necet lectus. </p>
 
-                    <a href="#" class="btn-a">MORE US</a>
+                    <a href="{{route('about.index')}}" class="btn-a">MORE US</a>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
@@ -294,50 +299,16 @@
             </div>
         </div>
         <div class="row">
+            @foreach($featuredImage as $image)
             <div class="col-md-4 col-sm-6 col-xs-12 properties-image">
-                <a href="{{ asset('assets/frontend/images/properties/properties-1-v1.jpg')}}">
+                <a href="{{ asset('storage/images/cover/'.$image->cover_image)}}">
                     <figure>
-                        <img src="{{ asset('assets/frontend/images/properties/properties-1-v1.jpg')}}" alt="" />
+                        <img src="{{ asset('storage/images/cover/'.$image->cover_image)}}" alt="" />
                         <span class="image-cap"><i class="fa fa-plus"></i></span>
                     </figure>
                 </a>
             </div>
-            <!--/Single properties-image-->
-            <div class="col-md-4 col-sm-6 col-xs-12 properties-image">
-                <a href="{{ asset('assets/frontend/images/properties/properties-2-v1.jpg')}}">
-                    <figure>
-                        <img src="{{ asset('assets/frontend/images/properties/properties-2-v1.jpg')}}" alt="" />
-                        <span class="image-cap"><i class="fa fa-plus"></i></span>
-                    </figure>
-                </a>
-            </div>
-            <!--/Single properties-image-->
-            <div class="col-md-4 col-sm-6 col-xs-12 properties-image">
-                <a href="{{ asset('assets/frontend/images/properties/properties-3-v1.jpg')}}">
-                    <figure>
-                        <img src="{{ asset('assets/frontend/images/properties/properties-3-v1.jpg')}}" alt="" />
-                        <span class="image-cap"><i class="fa fa-plus"></i></span>
-                    </figure>
-                </a>
-            </div>
-            <!--/Single properties-image-->
-            <div class="col-md-4 col-sm-6 col-xs-12 properties-image">
-                <a href="{{ asset('assets/frontend/images/properties/properties-4-v1.jpg')}}">
-                    <figure>
-                        <img src="{{ asset('assets/frontend/images/properties/properties-4-v1.jpg')}}" alt="" />
-                        <span class="image-cap"><i class="fa fa-plus"></i></span>
-                    </figure>
-                </a>
-            </div>
-            <!--/Single properties-image-->
-            <div class="col-md-4 col-sm-6 col-xs-12 properties-image">
-                <a href="{{ asset('assets/frontend/images/properties/properties-5-v1.jpg')}}">
-                    <figure>
-                        <img src="{{ asset('assets/frontend/images/properties/properties-5-v1.jpg')}}" alt="" />
-                        <span class="image-cap"><i class="fa fa-plus"></i></span>
-                    </figure>
-                </a>
-            </div>
+            @endforeach
             <!--/Single properties-image-->
         </div>
     </div>
@@ -869,13 +840,13 @@
 </section>
 <!--/Testimonial-->
 
-<!-- /.modal for new category -->
+<!-- /.modal for register -->
 <div class="modal fade" id="newClientRegister" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                <h4 class="modal-title">New Seller</h4>
+                <h4 class="modal-title">Register</h4>
             </div>
             <form role="form" action="{{ route('register') }}" method="POST">
                 @csrf
@@ -940,6 +911,6 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-<!-- /.modal for new category -->
+<!-- /.modal for register -->
 <!--Footer-->
 @endsection

@@ -11,7 +11,7 @@
                 <div class="banner-content">
                     <h3>PROPERTY DETAILS</h3>
                     <ul>
-                        <li><a href="home-1.html">Home</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
                         <li>></li>
                         <li><a href="#"><span>Property details</span></a></li>
                     </ul>
@@ -27,98 +27,67 @@
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 floatright">
                 <div class="single-descrip">
-                    <h4>Villa On Washington Ave</h4>
-                    <p>Add to favorites 3 Rooms 5 Bedrooms Villas Sales</p>
+                    <h4>Property Details</h4>
+                    <p>{{ $property->district->name_en }}, {{ $property->thana->name_en }}, {{ $property->region->name_en }}</p>
+
+
                     <div class="bg-photo">
-                        <img src="{{    asset('assets/frontend/images/properties/properties-details-2.1.jpg')}}" alt="">
-                        <img src="{{	asset('assets/frontend/images/properties/properties-details-2.2.jpg')}}" alt="">
-                        <img src="{{	asset('assets/frontend/images/properties/properties-details-2.3.jpg')}}" alt="">
-                        <img src="{{	asset('assets/frontend/images/properties/properties-details-2.4.jpg')}}" alt="">
-                        <img src="{{    asset('assets/frontend/images/properties/properties-details-2.1.jpg')}}" alt="">
-                        <img src="{{	asset('assets/frontend/images/properties/properties-details-2.2.jpg')}}" alt="">
+                        @foreach($property->images as $image)
+                        <img src="{{ asset('storage/images/details/'.$image->image)}}" alt="photo">
+                        @endforeach
                     </div>
+
                     <div class="sm-photo">
-                        <a href="#" data-slide-index="0"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.1.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="1"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.2.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="2"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.3.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="3"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.4.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="0"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.1.jpg')}}" alt=""></a>
-                        <a href="#" data-slide-index="1"><img src="{{ asset('assets/frontend/images/properties/properties-details-2.2.jpg')}}" alt=""></a>
+                        <?php $i = 0; ?>
+                        @foreach($property->images as $image)
+                        <a href="#" data-slide-index="<?php echo $i++; ?>"><img src="{{ asset('storage/images/details/'.$image->image )}}" alt="photo"></a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="single-descrip">
-                    <h4>The Urban life style</h4>
-                    <h4 class="sm-head"><i class="fa fa-map-marker"></i> 58 Street, Newyork</h4>
-                    <p class="out-mar">Morbi blandit mi ex. Etiam laoreet tortor felis, non consequat sem aliquet ac. Curabitur a gravida risus. Pellentesque nec lorem ultricies, volutpat libero tempor, vehicula justo. Praesent ultrices ut sem sed porttitor. Suspendisse pretium tortor non tellus sodales blandit sed non eros. Mauris consequat eget dolor ut efficitur. Vestibulum tempus mi quis ex imperdiet laoreet. Proin lorem tellus, fermentum nec porttitor nec, posuere eget lacus. Sed tincidunt velit a accumsan consequat. Fusce at ligula eget metus feugiat luctus. </p>
-                </div>
-                <div class="single-descrip">
                     <h4>Essential Information:</h4>
+                    @if($property->offer->id == 1 || $property->offer->id == 2)
                     <ul>
-                        <li><i class="fa fa-chevron-circle-right"></i> Property ID: HZ01</li>
-                        <li><i class="fa fa-chevron-circle-right"></i> Price: $5,000</li>
-                        <li><i class="fa fa-chevron-circle-right"></i> Property Size: 1200 Sq</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Property Type: Land</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Advertisement for: {{ $property->offer->name_en }}</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Property Area: {{ $property->amount_of_land_en }} Katha</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> @if($property->offer->id == 1) Price (Per katha) @else Rent (Per katha) @endif: {{ $property->minimum_price_en }} BDT</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> District: {{ $property->district->name_en }}</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Thana: {{ $property->thana->name_en  }}</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Region/Moholla : {{ $property->region->name_en }}</li>
                     </ul>
+                    @else
                     <ul>
-                        <li><i class="fa fa-chevron-circle-right"></i> Bathrooms: 2</li>
-                        <li><i class="fa fa-chevron-circle-right"></i> Garage: 1</li>
-                        <li><i class="fa fa-chevron-circle-right"></i> Garage: 1</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Property Type: Flat</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Advertisement for: {{ $property->offer->name_en }}</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Flat Space: {{ $property->flat_space_en }} Square Feet</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Number of Bedroom : {{ $property->no_of_bedroom_en }}</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> @if($property->offer->id == 3) Price (Per square feet) @else Rent @endif: {{ $property->minimum_price_en }} BDT</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Floor : {{ $property->floor_en }}</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> House: {{ $property->house_en  }}</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Road: {{ $property->road_en }}</li>
+
+                        <li><i class="fa fa-chevron-circle-right"></i> District: {{ $property->district->name_en }}</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Thana: {{ $property->thana->name_en  }}</li>
+                        <li><i class="fa fa-chevron-circle-right"></i> Region/Moholla : {{ $property->region->name_en }}</li>
                     </ul>
-                    <ul>
-                        <li><i class="fa fa-chevron-circle-right"></i> Garage Size: 200</li>
-                        <li><i class="fa fa-chevron-circle-right"></i> SqFt</li>
-                        <li><i class="fa fa-chevron-circle-right"></i> Year Built: </li>
-                    </ul>
-                </div>
-                <div class="single-descrip">
-                    <h4>Essential Information:</h4>
-                    <ul>
-                        <li><i class="fa fa-chevron-circle-down"></i> Air Conditioning</li>
-                        <li><i class="fa fa-chevron-circle-down"></i> Coffee Pot</li>
-                        <li><i class="fa fa-chevron-circle-down"></i> Dishwasher</li>
-                    </ul>
-                    <ul>
-                        <li><i class="fa fa-chevron-circle-down"></i> Oven</li>
-                        <li><i class="fa fa-chevron-circle-down"></i> Lift</li>
-                        <li><i class="fa fa-chevron-circle-down"></i> Computer</li>
-                    </ul>
-                    <ul>
-                        <li><i class="fa fa-chevron-circle-down"></i> Parking</li>
-                        <li><i class="fa fa-chevron-circle-down"></i> Computer</li>
-                    </ul>
+                    @endif
                     <div class="booknow-btn">
-                        <a href="#" class="btn-a">Book Now</a>
+                        <a href="{{route('user.select.favourite', $property->id)}}" class="btn-a">Select as Favourite</a>
+                        <a href="{{route('property.index')}}" class="btn-a">Back</a>
                     </div>
                 </div>
                 <div class="single-descrip">
-                    <div class="property-map">
-                        <h4>Property Map:</h4>
-                        <img src="{{ asset('assets/frontend/images/map.jpg')}}" alt="" />
-                    </div>
+                    <h4>Property Description</h4>
+                    <p class="out-mar">
+                        {{ $property->description_en }}
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--/Property details area-->
-<!--Subscribe-->
-<section class="subscribe-area">
-    <div class=" container-fluid">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="subs-content">
-                    <h3>SUBSCRIBE NEWSLETTER</h3>
-                    <span></span>
-                </div>
-            </div>
-            <div class="col-md-7">
-                <form>
-                    <input type="email" placeholder="enter email here..." />
-                    <button type="submit" class="btn">SEND</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/Subscribe-->
+
 <!--Footer-->
 @endsection

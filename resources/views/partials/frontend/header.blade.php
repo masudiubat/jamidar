@@ -40,7 +40,7 @@
                                 <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{url('/')}}">Home</a></li>
                                 <li class="{{ request()->routeIs('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">About</a></li>
                                 <li class="{{ request()->routeIs('property*') ? 'active' : '' }}"><a href="{{route('property.index')}}">Property</a></li>
-                                <li><a href="#">Slod Listing</a></li>
+                                <li class="{{ request()->routeIs('sold*') ? 'active' : '' }}"><a href="{{route('sold.list')}}">Slod Listing</a></li>
                                 <li class="{{ request()->routeIs('agent*') ? 'active' : '' }}"><a href="{{route('agent.index')}}">Agent</a></li>
                                 <li class="{{ request()->routeIs('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Contact</a></li>
                             </ul>
@@ -48,8 +48,43 @@
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-12 col-xs-12">
+                    @if (Auth::check())
                     <div class="submit-property text-right">
-                        <a class="btn-b submit-btn">Submit property</a>
+                        <a class="btn-b submit-btn">My Account</a>
+                        <div class="submit-form text-left">
+                            <ul>
+                                <li>
+                                    <ul>
+                                        <li class="floatleft">
+                                            <p>Settings </p>
+                                        </li>
+                                        <li class="floatright"><i class="fa fa-times close-form"></i></li>
+                                    </ul>
+                                </li>
+                                <li> &nbsp; </li>
+                                <li><a href="{{route('user.favourite.list')}}" class="sbform-btn btn-facebook"> <i class="fa fa-list" aria-hidden="true"></i> Selecteed Properties</a></li>
+                                <li><br /></li>
+                                <li><a href="{{route('user.dashboard')}}" class="sbform-btn btn-yahoo"> <i class="fa fa-tachometer" aria-hidden="true"></i> My Dashboard</a></li>
+                                <li><br /></li>
+                                <li>
+                                    <a href="#" class="sbform-btn btn-google" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-power-off" aria-hidden="true"></i> Logout
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                                <!--
+                                <li><a href="#" class="sbform-btn btn-facebook">Login with facebook</a></li>
+                                <li><a href="#" class="sbform-btn btn-google">Login with google</a></li>
+                                <li><a href="#" class="sbform-btn btn-yahoo">Login with yahoo</a></li>
+-->
+                            </ul>
+                        </div>
+                    </div>
+                    @else
+                    <div class="submit-property text-right">
+                        <a class="btn-b submit-btn">Login</a>
                         <div class="submit-form text-left">
                             <ul>
                                 <li>
@@ -84,6 +119,7 @@
                             </ul>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -100,7 +136,7 @@
                             <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{url('/')}}">Home</a></li>
                             <li class="{{ request()->routeIs('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">About</a></li>
                             <li class="{{ request()->routeIs('property*') ? 'active' : '' }}"><a href="{{route('property.index')}}">Property</a></li>
-                            <li><a href="#">Slod Listing</a></li>
+                            <li class="{{ request()->routeIs('sold*') ? 'active' : '' }}"><a href="{{route('sold.list')}}">Slod Listing</a></li>
                             <li class="{{ request()->routeIs('agent*') ? 'active' : '' }}"><a href="{{route('agent.index')}}">Agent</a></li>
                             <li class="{{ request()->routeIs('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Contact</a></li>
                         </ul>
